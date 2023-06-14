@@ -1,0 +1,6 @@
+{
+    "dotnet.defaultSolution": "DatingApp.sln",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active"
+
+}
