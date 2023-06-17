@@ -1,10 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+   // eslint-disable-next-line @angular-eslint/component-selector
+   
+   
+
 })
 export class AppComponent implements OnInit {
 
