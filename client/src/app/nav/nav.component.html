@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg bg-dark border-bottom-dark " data-bs-theme="dark">
+
+  <div class="container">
+    <a class="navbar-brand" href="#">Dating App</a>
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="accountService.currentUser$ | async">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+    </ul>
+    <div class="dropdown" *ngIf="accountService.currentUser$|async" dropdown>
+      <a class="dropdown-toggle text-light " dropdownToggle>Welecome User</a>
+      <div class="dropdown-menu mt-4" *dropdownMenu>
+        <a class="dropdown-item">Edit profile</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" (click)="logout()">Logout</a>
+
+      </div>
+    </div>
+
+    <form *ngIf="(accountService.currentUser$ |async)===null" #loginForm='ngForm' class="d-flex" role="search"
+      (ngSubmit)="login()" autocomplete='off'>
+      <input name='Username' [(ngModel)]="model.Username" class="form-control me-2" type="search" placeholder="Username"
+        aria-label="Search">
+      <input name='Password' [(ngModel)]="model.Password" class="form-control me-2" type="password"
+        placeholder="Password" aria-label="Search">
+
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
